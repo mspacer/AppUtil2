@@ -1,0 +1,47 @@
+apply plugin: 'java'
+apply plugin: "maven"
+
+
+repositories {
+      maven { url "https://artifactory.apps.dkz.cloud/artifactory/all" }
+}
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6              
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+            exclude '**/*.java'
+        }
+    }
+}
+
+	   	
+dependencies {                     
+	compile 'log4j:log4j:1.2.14'    
+	compile 'ru.simpleit.portlet.xwork:XWorkPortletLib:1.0.2'
+	compile 'ru.simpleit.portlet.xwork:PortalUtils:5.1'
+	compile 'ibs.espd:IBSUtil-latest:1.0'
+	compile 'org.json:json:ibs-1.0'
+	compile 'ibs.espd.pib:LoggingUtil:1.1'
+	compile 'ibs.wmm:userfacade-core:1.4'
+	compile 'org.apache.struts:struts2-core:2.1.6-java1.4'
+	compile 'com.opensymphony:xwork:2.1.2-java1.4'
+	
+}
+
+jar {
+ manifest {
+    attributes ('Specification-Title': 'jenkins.apps.dkz.cloud'
+               )
+  }
+}
+
