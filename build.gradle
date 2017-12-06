@@ -1,10 +1,8 @@
 apply plugin: 'java'
 apply plugin: "maven"
 
+apply from: 'http://192.168.2.111:8081/artifactory/test/build.gradle'
 
-repositories {
-      maven { url "https://artifactory.apps.dkz.cloud/artifactory/all" }
-}
 
 sourceCompatibility = 1.6
 targetCompatibility = 1.6              
